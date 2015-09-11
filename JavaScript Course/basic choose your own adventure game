@@ -1,0 +1,28 @@
+var user = prompt("What is your favorite song?").toLowerCase();
+switch (user) {
+    case 'i can tell':
+        console.log("mine too!")
+        var heart = prompt("do you know the band summer heart?").toLowerCase()
+        var heard = prompt("have you heard their song beat of your heart?").toLowerCase()
+        if (heart === 'yes' && heard === 'yes') {
+            console.log("that's amazing!")
+        } else {
+            console.log("you should check them out, they're amazing")
+        }
+        break;
+    case 'i wanna go':
+        console.log('that was my favorite a few months ago')
+        break;
+    case "i don't know":
+        console.log('no worries')
+        var music = prompt("do you like music?").toLowerCase()
+        var fav = prompt("do you have a favorite song?").toLowerCase()
+        if (music === 'yes' || fav === 'yes') {
+            console.log("awesome! tell me what you like!")
+        } else {
+            console.log("okay...")
+        }
+        break;
+    default:
+        console.log("i don't know that song!")
+}

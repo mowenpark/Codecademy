@@ -1,0 +1,44 @@
+movies = {
+    Gunther: 2
+}
+
+puts "What would you like to do?"
+choice = gets.chomp
+case choice
+when "add"
+    puts "What movie would you like to add?"
+    title = gets.chomp
+    if movies[title.to_sym].nil?
+    puts "What would you rate this movie (on a scale from 0 to 5)?"
+    rating = gets.chomp
+    movies[title.to_sym] = rating.to_i
+    puts "Your movie '#{title}' has been added to the list at a rating of #{rating}!"
+else
+    puts "The movie '#{title}' has already been added at a rating of #{rating}!"
+end
+when "update"
+    puts "What is the title of the movie you want to update?"
+    title = gets.chomp
+    if movies[title.to_sym].nil?
+        puts "There is no movie title by the name of '#{title}'"
+    else
+        puts "What would you like to change the rating of #{title} too? (scale 0-5)"
+        rating = gets.chomp
+        movies[title.to_sym] = rating.to_i
+    end
+when "display"
+    movies.each do |movie,rating|
+        puts "#{movie}: #{rating}"
+    end
+when "delete"
+    puts "Which movie would you like to delete?"
+    title = gets.chomp
+    if movies[title.to_sym].nil?
+        puts "Sorry, the movie title '#{title}' was not found."
+    else
+        movies.delete(title)
+        puts "Great success! The movie #{title} was deleted!"
+    end
+else
+    puts "Sorry! We didn't understand your input!"
+end

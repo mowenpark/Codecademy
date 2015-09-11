@@ -1,0 +1,24 @@
+/*jshint multistr:true */
+
+var text = "i am a michael i love to code in js \
+it is so much fun... michael"
+var myName = "michael"
+var hits = []
+// my try at the problem
+/*for (var i=0; i < text.length; i++) {
+    if (text[i]===myName[0]){
+        for (var j=i; j < (myName.length+i); j++) {
+            hits.push(text[j]);
+        }
+    }
+}*/
+for(i=0;i<text.length;i++) {
+    if(text.substring(i,i+myName.length)===myName) {
+        hits.push(text.substring(i,i+myName.length));
+    };
+};
+if (hits === 0) {
+    console.log("Your name wasn't found!")
+    } else {
+        console.log(hits)
+        };
